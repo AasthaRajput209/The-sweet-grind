@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Our Story · The Sweet Grind</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0d0d0d',
+                        foreground: '#fafafa',
+                        card: '#18181b',
+                        border: '#27272a',
+                        primary: { DEFAULT: '#f9a8d4', foreground: '#09090b' },
+                        muted: { DEFAULT: '#27272a', foreground: '#a1a1aa' },
+                        matcha: '#bbf7d0',
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; }
+        @keyframes fade-up {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-up { animation: fade-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .animate-pulse-dot { animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        ::selection { background-color: #f9a8d4; color: #0d0d0d; }
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+
+    <nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
+        <div class="flex items-center gap-2">
+            <div class="size-2 bg-matcha rounded-full animate-pulse-dot"></div>
+            <span class="text-[10px] font-medium tracking-[0.2em] uppercase text-muted-foreground">Live · W 6th St, Austin TX</span>
+        </div>
+        <a href="index.html" class="absolute left-1/2 -translate-x-1/2">
+            <div class="h-9 w-20 bg-primary rounded-[100%] flex items-center justify-center shadow-lg">
+                <span class="text-[8px] font-black text-primary-foreground text-center leading-none tracking-tighter uppercase">The Sweet<br/>Grind</span>
+            </div>
+        </a>
+        <div class="hidden md:flex gap-6 text-[11px] font-medium uppercase tracking-[0.25em]">
+            <a href="menu.html" class="hover:text-primary transition-colors text-foreground">Menu</a>
+            <a href="story.html" class="hover:text-primary transition-colors text-primary active">Story</a>
+            <a href="visit.html" class="hover:text-primary transition-colors text-foreground">Visit</a>
+        </div>
+        <div class="md:hidden w-6"></div>
+    </nav>
+
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-fade-up">
+        <div class="hidden sm:flex bg-card/90 backdrop-blur-xl border border-border p-3 pr-5 rounded-xl items-center gap-3 shadow-2xl">
+            <div class="size-7 bg-matcha/20 rounded-full flex items-center justify-center">
+                <div class="size-1.5 bg-matcha rounded-full animate-pulse-dot"></div>
+            </div>
+            <div>
+                <p class="text-[9px] text-muted-foreground uppercase tracking-widest">Est. Wait</p>
+                <p class="text-xs font-semibold text-foreground tracking-tight">8 min · W 6th</p>
+            </div>
+        </div>
+        <button class="h-11 px-7 bg-primary text-primary-foreground text-xs font-bold tracking-[0.25em] uppercase rounded-full ring-2 ring-primary ring-offset-4 ring-offset-background hover:scale-[1.03] active:scale-95 transition-transform shadow-2xl">Skip the line →</button>
+    </div>
+
+    <section class="grid grid-cols-12 min-h-screen pt-20 border-b border-border">
+        <div class="col-span-12 lg:col-span-7 p-6 md:p-12 lg:p-24 flex flex-col justify-center animate-fade-up">
+            <span class="font-mono text-primary text-xs tracking-[0.3em] uppercase">Est. 2022 · Austin TX</span>
+            <h1 class="font-serif italic text-6xl md:text-[8rem] leading-[0.85] mt-4 mb-12">Our Story.</h1>
+            <h2 class="text-3xl md:text-5xl font-medium leading-tight mb-8">Started in a garage.<br>Built on Texas obsession.</h2>
+            <p class="text-muted-foreground text-lg leading-relaxed max-w-[50ch] mb-6">
+                The Sweet Grind began in 2022 with a single espresso machine, a hand-painted truck, and a stubborn belief that a coffee shop on wheels could be every bit as crafted as the best brick-and-mortar cafés.
+            </p>
+            <p class="text-muted-foreground text-lg leading-relaxed max-w-[50ch]">
+                Today we pull thousands of shots a week across Austin — but the standard hasn't budged: small-batch syrups, single-origin beans, ceremonial-grade matcha, and desserts pulled from the oven the morning they're served.
+            </p>
+        </div>
+        <div class="col-span-12 lg:col-span-5 relative min-h-[500px] bg-card">
+            <img src="https://sweet-grind-glow.lovable.app/assets/drink-pink-matcha-Cr3BbQGD.png" alt="Strawberry Glow Latte" class="absolute inset-0 w-full h-full object-cover"/>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-12 py-24 border-b border-border">
+        <span class="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-4 block">[ THE STANDARD ]</span>
+        <h2 class="font-serif italic text-5xl md:text-6xl mb-16">What we never cut.</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <span class="font-mono text-muted-foreground text-xs">01</span>
+                <h3 class="text-2xl font-serif italic mt-4 mb-3">Craft Over Speed</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">Every drink is whisked, layered, and finished by hand. Faster isn't the goal — better is.</p>
+            </div>
+            <div>
+                <span class="font-mono text-muted-foreground text-xs">02</span>
+                <h3 class="text-2xl font-serif italic mt-4 mb-3">Local First</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">Dairy from Texas farms. Beans from ethical roasters. Berries from the farmers' market.</p>
+            </div>
+            <div>
+                <span class="font-mono text-muted-foreground text-xs">03</span>
+                <h3 class="text-2xl font-serif italic mt-4 mb-3">Community</h3>
+                <p class="text-muted-foreground text-sm leading-relaxed">We park where the people are. We learn names. We remember orders. We show up.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 border-b border-border">
+        <div class="aspect-square relative bg-card">
+            <img src="https://sweet-grind-glow.lovable.app/assets/drink-matcha-CyMsjK6s.png" alt="Matcha Close Up" class="absolute inset-0 w-full h-full object-cover"/>
+        </div>
+        <div class="p-8 md:p-16 flex flex-col justify-center bg-background">
+            <span class="font-mono text-primary text-xs tracking-[0.3em] uppercase mb-8">[ BEHIND THE COUNTER ]</span>
+            <p class="font-serif italic text-3xl md:text-5xl leading-tight text-balance mb-8">
+                "We didn't want to be the trendy truck. We wanted to be the one you bring your friends to — and they get it too."
+            </p>
+            <p class="font-mono text-muted-foreground text-xs uppercase tracking-widest">— THE FOUNDERS, SWEET GRIND HQ</p>
+        </div>
+    </section>
+
+    <footer class="px-6 md:px-12 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            <div class="md:col-span-5 space-y-6">
+                <div class="h-10 w-24 bg-primary rounded-[100%] flex items-center justify-center">
+                    <span class="text-[9px] font-black text-primary-foreground text-center leading-none tracking-tighter uppercase">The Sweet<br/>Grind</span>
+                </div>
+                <p class="font-serif italic text-3xl text-foreground max-w-md leading-tight">Texas-born. Brewed to glow.</p>
+                <p class="text-sm text-muted-foreground max-w-sm leading-relaxed">Follow the truck on Instagram for live locations, seasonal drops, and behind-the-counter moments.</p>
+            </div>
+            <div class="md:col-span-3">
+                <h4 class="text-[10px] font-bold uppercase tracking-[0.25em] mb-5 text-muted-foreground">Wander</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="menu.html" class="hover:text-primary transition-colors">Menu</a></li>
+                    <li><a href="story.html" class="hover:text-primary transition-colors text-primary">Our Story</a></li>
+                    <li><a href="visit.html" class="hover:text-primary transition-colors">Visit Us</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold uppercase tracking-[0.25em] mb-5 text-muted-foreground">Follow</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-primary transition-colors">Instagram · @thesweet.grind</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">TikTok</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Press · hello@sweetgrind.tx</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between gap-4 pt-8 border-t border-border text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+            <p>© 2026 The Sweet Grind · Austin, Texas</p>
+            <p>Brewed slow · Served sweet</p>
+        </div>
+    </footer>
+</body>
+</html>

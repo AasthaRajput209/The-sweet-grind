@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Menu · The Sweet Grind</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: '#0d0d0d',
+                        foreground: '#fafafa',
+                        card: '#18181b',
+                        border: '#27272a',
+                        primary: { DEFAULT: '#f9a8d4', foreground: '#09090b' },
+                        muted: { DEFAULT: '#27272a', foreground: '#a1a1aa' },
+                        matcha: '#bbf7d0',
+                    },
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { animation: marquee 25s linear infinite; }
+        @keyframes fade-up { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fade-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+        .animate-pulse-dot { animation: pulse-dot 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        ::selection { background-color: #f9a8d4; color: #0d0d0d; }
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground">
+
+    <nav class="fixed top-0 inset-x-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-border">
+        <div class="flex items-center gap-2">
+            <div class="size-2 bg-matcha rounded-full animate-pulse-dot"></div>
+            <span class="text-[10px] font-medium tracking-[0.2em] uppercase text-muted-foreground">Live · W 6th St, Austin TX</span>
+        </div>
+        <a href="index.html" class="absolute left-1/2 -translate-x-1/2">
+            <div class="h-9 w-20 bg-primary rounded-[100%] flex items-center justify-center shadow-lg">
+                <span class="text-[8px] font-black text-primary-foreground text-center leading-none tracking-tighter uppercase">The Sweet<br/>Grind</span>
+            </div>
+        </a>
+        <div class="hidden md:flex gap-6 text-[11px] font-medium uppercase tracking-[0.25em]">
+            <a href="menu.html" class="hover:text-primary transition-colors text-primary active">Menu</a>
+            <a href="story.html" class="hover:text-primary transition-colors text-foreground">Story</a>
+            <a href="visit.html" class="hover:text-primary transition-colors text-foreground">Visit</a>
+        </div>
+        <div class="md:hidden w-6"></div>
+    </nav>
+
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 animate-fade-up">
+        <div class="hidden sm:flex bg-card/90 backdrop-blur-xl border border-border p-3 pr-5 rounded-xl items-center gap-3 shadow-2xl">
+            <div class="size-7 bg-matcha/20 rounded-full flex items-center justify-center">
+                <div class="size-1.5 bg-matcha rounded-full animate-pulse-dot"></div>
+            </div>
+            <div>
+                <p class="text-[9px] text-muted-foreground uppercase tracking-widest">Est. Wait</p>
+                <p class="text-xs font-semibold text-foreground tracking-tight">8 min · W 6th</p>
+            </div>
+        </div>
+        <button class="h-11 px-7 bg-primary text-primary-foreground text-xs font-bold tracking-[0.25em] uppercase rounded-full ring-2 ring-primary ring-offset-4 ring-offset-background hover:scale-[1.03] active:scale-95 transition-transform shadow-2xl">Skip the line →</button>
+    </div>
+
+    <section class="pt-32 pb-16 px-6 md:px-12 border-b border-border animate-fade-up">
+        <span class="font-mono text-primary text-xs tracking-[0.3em] uppercase">The Drop · Week 42</span>
+        <h1 class="font-serif italic text-7xl md:text-[10rem] leading-[0.85] mt-4 text-balance">The Menu.</h1>
+        <p class="mt-8 max-w-[55ch] text-lg text-muted-foreground leading-relaxed text-pretty">
+            Every item handcrafted in our truck. Featuring our signature specialty drinks, classic espresso pulls, and small-batch sweets.
+        </p>
+    </section>
+
+    <div class="py-4 border-y border-border overflow-hidden whitespace-nowrap bg-card/40">
+        <div class="flex animate-marquee w-max">
+            <div class="flex gap-12 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground pr-12 items-center shrink-0">
+                <span class="flex items-center gap-12"><span>Hand-whisked daily</span><span class="size-1.5 rounded-full bg-primary"></span></span>
+                <span class="flex items-center gap-12"><span>Single-origin beans</span><span class="size-1.5 rounded-full bg-border"></span></span>
+                <span class="flex items-center gap-12"><span>Probiotic Lemonades</span><span class="size-1.5 rounded-full bg-primary"></span></span>
+                <span class="flex items-center gap-12"><span>Ceremonial Uji matcha</span><span class="size-1.5 rounded-full bg-border"></span></span>
+                <span class="flex items-center gap-12"><span>Baked fresh</span><span class="size-1.5 rounded-full bg-primary"></span></span>
+            </div>
+            <div class="flex gap-12 text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground pr-12 items-center shrink-0">
+                <span class="flex items-center gap-12"><span>Hand-whisked daily</span><span class="size-1.5 rounded-full bg-primary"></span></span>
+                <span class="flex items-center gap-12"><span>Single-origin beans</span><span class="size-1.5 rounded-full bg-border"></span></span>
+                <span class="flex items-center gap-12"><span>Probiotic Lemonades</span><span class="size-1.5 rounded-full bg-primary"></span></span>
+                <span class="flex items-center gap-12"><span>Ceremonial Uji matcha</span><span class="size-1.5 rounded-full bg-border"></span></span>
+                <span class="flex items-center gap-12"><span>Baked fresh</span><span class="size-1.5 rounded-full bg-primary"></span></span>
+            </div>
+        </div>
+    </div>
+
+    <section class="px-6 md:px-12 py-20 border-b border-border">
+        <div class="flex justify-between items-end mb-12 pb-6 border-b border-border flex-wrap gap-4">
+            <div>
+                <span class="font-mono text-xs text-primary tracking-widest">[ 01 ]</span>
+                <h2 class="font-serif italic text-5xl md:text-6xl mt-2">Specialty Drinks</h2>
+            </div>
+            <p class="text-xs uppercase tracking-[0.25em] text-muted-foreground max-w-xs text-right">Our signature handcrafted drops.</p>
+        </div>
+        
+        <div class="divide-y divide-border border-t border-border">
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">01</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Sweet Corn Cream Cold Brew</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <p class="text-sm text-muted-foreground max-w-[40ch] hidden md:block">Sweet Corn Milk, Heavy Cream, Cold Brew.</p>
+                    <span class="font-mono text-primary text-base shrink-0">$6.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">02</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Honey Vanilla Latte</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <p class="text-sm text-muted-foreground max-w-[40ch] hidden md:block">Hot or cold - Espresso choice of Milk, Honey & Vanilla.</p>
+                    <span class="font-mono text-primary text-base shrink-0">$6.50</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">03</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Matcha</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <p class="text-sm text-muted-foreground max-w-[40ch] hidden md:block">Choice of Milk and Sweetener. (Add Strawberry Puree +$1)</p>
+                    <span class="font-mono text-primary text-base shrink-0">$7.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">04</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Fruity Pebbles</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <p class="text-sm text-muted-foreground max-w-[40ch] hidden md:block">Matcha, Lavender Syrup and Oatmilk.</p>
+                    <span class="font-mono text-primary text-base shrink-0">$7.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">05</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Pickle Lemonade</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <p class="text-sm text-muted-foreground max-w-[40ch] hidden md:block">Refreshing lemonade with a tangy, gut-friendly probiotic twist.</p>
+                    <span class="font-mono text-primary text-base shrink-0">$6.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">06</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Classic Lemonade</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <p class="text-sm text-muted-foreground max-w-[40ch] hidden md:block">Traditional, refreshing, ice-cold.</p>
+                    <span class="font-mono text-primary text-base shrink-0">$6.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-12 py-20 border-b border-border">
+        <div class="flex justify-between items-end mb-12 pb-6 border-b border-border flex-wrap gap-4">
+            <div>
+                <span class="font-mono text-xs text-primary tracking-widest">[ 02 ]</span>
+                <h2 class="font-serif italic text-5xl md:text-6xl mt-2">Drinks</h2>
+                <div class="flex gap-8 mt-6">
+                    <div>
+                        <p class="font-mono text-[10px] text-primary tracking-widest uppercase mb-1">Milks</p>
+                        <p class="text-sm text-muted-foreground">Oat or Whole Milk</p>
+                    </div>
+                    <div>
+                        <p class="font-mono text-[10px] text-primary tracking-widest uppercase mb-1">Syrups</p>
+                        <p class="text-sm text-muted-foreground">Vanilla, Lavender, Simple Syrup, Seasonal Syrups</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-xs uppercase tracking-[0.25em] text-muted-foreground max-w-xs text-right">Pulled to order or slow-steeped.</p>
+        </div>
+        
+        <div class="divide-y divide-border border-t border-border">
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">07</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Americano</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$4.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">08</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Espresso</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$3.50</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">09</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Cortado</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$4.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">10</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Cappuccino</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$4.50</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">11</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Cold Brew</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$5.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">12</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Drip Coffee</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$4.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-12 py-20 border-b border-border">
+        <div class="flex justify-between items-end mb-12 pb-6 border-b border-border flex-wrap gap-4">
+            <div>
+                <span class="font-mono text-xs text-primary tracking-widest">[ 03 ]</span>
+                <h2 class="font-serif italic text-5xl md:text-6xl mt-2">Refreshments</h2>
+            </div>
+        </div>
+        
+        <div class="divide-y divide-border border-t border-border">
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">13</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Bottled Water</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$2.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">14</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Sparkling Water</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$2.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">15</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Coconut Water</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$4.00</span>
+                </div>
+            </div>
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">16</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Sodas</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <span class="font-mono text-primary text-base shrink-0">$2.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="px-6 md:px-12 py-20 border-b border-border">
+        <div class="flex justify-between items-end mb-12 pb-6 border-b border-border flex-wrap gap-4">
+            <div>
+                <span class="font-mono text-xs text-primary tracking-widest">[ 04 ]</span>
+                <h2 class="font-serif italic text-5xl md:text-6xl mt-2">Sweets</h2>
+            </div>
+        </div>
+        
+        <div class="divide-y divide-border border-t border-border">
+            <div class="group py-6 flex flex-col lg:flex-row lg:items-center justify-between gap-3 hover:bg-card/60 transition-colors px-4 -mx-4 cursor-pointer">
+                <div class="flex gap-6 items-baseline">
+                    <span class="font-mono text-xs text-muted-foreground">17</span>
+                    <h3 class="font-serif text-3xl italic text-foreground group-hover:text-primary transition-colors">Cookies</h3>
+                </div>
+                <div class="flex items-center gap-8 pl-10 lg:pl-0">
+                    <p class="text-sm text-muted-foreground max-w-[40ch] hidden md:block">Sprinkle or Chocolate Chip (2 per package).</p>
+                    <span class="font-mono text-primary text-base shrink-0">$3.50</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="px-6 md:px-12 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            <div class="md:col-span-5 space-y-6">
+                <div class="h-10 w-24 bg-primary rounded-[100%] flex items-center justify-center">
+                    <span class="text-[9px] font-black text-primary-foreground text-center leading-none tracking-tighter uppercase">The Sweet<br/>Grind</span>
+                </div>
+                <p class="font-serif italic text-3xl text-foreground max-w-md leading-tight">Texas-born. Brewed to glow.</p>
+                <p class="text-sm text-muted-foreground max-w-sm leading-relaxed">Follow the truck on Instagram for live locations, seasonal drops, and behind-the-counter moments.</p>
+            </div>
+            <div class="md:col-span-3">
+                <h4 class="text-[10px] font-bold uppercase tracking-[0.25em] mb-5 text-muted-foreground">Wander</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><a href="menu.html" class="hover:text-primary transition-colors text-primary">Menu</a></li>
+                    <li><a href="story.html" class="hover:text-primary transition-colors">Our Story</a></li>
+                    <li><a href="visit.html" class="hover:text-primary transition-colors">Visit Us</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-4">
+                <h4 class="text-[10px] font-bold uppercase tracking-[0.25em] mb-5 text-muted-foreground">Follow</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-primary transition-colors">Instagram · @thesweet.grind</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">TikTok</a></li>
+                    <li><a href="#" class="hover:text-primary transition-colors">Press · hello@sweetgrind.tx</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between gap-4 pt-8 border-t border-border text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+            <p>© 2026 The Sweet Grind · Austin, Texas</p>
+            <p>Brewed slow · Served sweet</p>
+        </div>
+    </footer>
+
+</body>
+</html>
